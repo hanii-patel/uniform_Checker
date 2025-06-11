@@ -19,42 +19,21 @@ A real-time system that detects if an employee is wearing a uniform and identifi
 ---
 
 ## 📁 Project Structure
-Hybrid-Uniform-Checker/
-│
-├── employee_db/                         # ➤ Employee reference images (e.g. Hani_01.jpg)
-│   └── Hani_01.jpg
-│   └── Drashti_02.jpg
-│   └── ...
-│
-├── captures/                            # ➤ Automatically saved violation images
-│   └── Hani_01_20250608_141233.jpg
-│   └── ...
-│
-├── datasets/                            # ➤ Training data for uniform classifier
-│   ├── uniform/                         # ➤ Images with uniform
-│   │   └── u1.jpg
-│   │   └── u2.jpg
-│   │   └── ...
-│   └── no_uniform/                      # ➤ Images without uniform
-│       └── nu1.jpg
-│       └── nu2.jpg
-│       └── ...
-│
-├── violation.db                         # ➤ SQLite database for logging violations
-│
-├── haarcascade_frontalface_default.xml  # ➤ Haar cascade file for face detection
-│
-├── uniform_classifier.keras             # ➤ Trained CNN model for uniform detection
-│
-├── hybrid_uniform_checker.py            # ➤ Main script (Hybrid CNN + DeepFace)
-│
-├── re_train_model.py                    # ➤ Script to retrain CNN model on dataset
-│
-├── convert_model.py                     # ➤ Script to convert/save Keras model
-│
-├── requirements.txt                     # ➤ All required Python packages
-│
-└── README.md                            # ➤ Project documentation (copy from above)
+| 📁 Folder / 📄 File                   | Description                                                                  |
+| ------------------------------------- | ---------------------------------------------------------------------------- |
+| `employee_db/`                        | Folder containing employee reference images (e.g. `Hani_01.jpg`)             |
+| `captures/`                           | Folder to save captured images of violations                                 |
+| `datasets/`                           | Dataset folder used to train the uniform classifier                          |
+| ├── `uniform/`                        | Images of people wearing uniform                                             |
+| └── `no_uniform/`                     | Images of people **not** wearing uniform                                     |
+| `violation.db`                        | SQLite database to store violation logs                                      |
+| `haarcascade_frontalface_default.xml` | Haar Cascade XML file for face detection                                     |
+| `uniform_classifier.keras`            | Trained Keras CNN model for uniform detection                                |
+| `hybrid_uniform_checker.py`           | **Main Python script** combining CNN (uniform) + DeepFace (face recognition) |
+| `re_train_model.py`                   | Script to retrain the CNN model using `datasets/`                            |
+| `convert_model.py`                    | Script to convert or save the Keras model                                    |
+| `requirements.txt`                    | List of Python dependencies for the project                                  |
+| `README.md`                           | Project documentation (overview, setup, usage, etc.)                         |
 
 
 ---
@@ -129,6 +108,7 @@ Add admin portal to register employees
 Generate violation reports
 
 Trigger alert for repeated violators
+
 
 
 
