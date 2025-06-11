@@ -1,0 +1,6 @@
+opencv-python
+tensorflow>=2.11
+deepface
+numpy
+scikit-learn
+pillow
